@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+
+  <title>Homepage | CT2027</title>
+
+  <meta name="description" content="CT2027" />
+
+  <link rel="canonical" href="https://ct2027.github.io/" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" /> <!--must be 512*512 pixels, just name the logo as logo.png and replace the existing file-->
+
+  <!--<meta property="og:title" content="CT2027" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://ct2027.github.io/" />
+  <meta property="og:site_name" content="CT2027" />
+  <meta property="og:description" content="CT2027 Home Page" />
+  <meta property="og:image" content="https://ct2027.github.io/assets/img/thumbnail.png" /> must be 1200*630 pixels
+  <meta name="twitter:card" content="summary_large_image" />-->
+
+  <link crossorigin="anonymous" href="assets/styles/main.min.css" media="screen" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles/atom-one-dark.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+
+  <script src="assets/js/highlight.min.js"></script>
+  <script src="assets/js/alpine.js" defer></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+
+
+<body x-data="global()" x-init="themeInit()" :class="isMobileMenuOpen ? 'max-h-screen overflow-hidden relative' : ''"
+  class="dark:bg-primary">
+
+  <div id="main">
+    <div class="container mx-auto">
+      <div class="flex items-center justify-between py-6 lg:py-10">
+        <a href="/" class="flex items-center">
+          <img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />
+          <p class="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block">
+            <span style="margin-left: 5pt;">CT</span><span style="color: #00aaa1;">2027</span>
+          </p>
+        </a>
+        <div class="flex items-center lg:hidden">
+
+          <svg width="24" height="15" xmlns="http://www.w3.org/2000/svg" @click="isMobileMenuOpen = true"
+            class="fill-current text-primary dark:text-white">
+            <g fill-rule="evenodd">
+              <rect width="24" height="3" rx="1.5" />
+              <rect x="8" y="6" width="16" height="3" rx="1.5" />
+              <rect x="4" y="12" width="20" height="3" rx="1.5" />
+            </g>
+          </svg>
+        </div>
+        <div class="hidden lg:block">
+          <ul class="flex items-center">
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="index.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Home</a>
+            </li>
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="conference.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">The
+                Conference</a>
+            </li>
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="city.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">The
+                City</a>
+            </li>
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="contact.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="pointer-events-none fixed inset-0 z-50 flex bg-black bg-opacity-80 opacity-0 transition-opacity lg:hidden"
+      :class="isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : ''">
+      <div class="ml-auto w-2/3 bg-green p-4 md:w-1/3">
+        <i class="bx bx-x absolute top-0 right-0 mt-4 mr-4 text-4xl text-white" @click="isMobileMenuOpen = false"></i>
+        <ul class="mt-8 flex flex-col">
+
+          <li class="">
+            <a href="index.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">Home</a>
+          </li>
+
+          <li class="">
+            <a href="conference.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">The
+              Conference</a>
+          </li>
+
+          <li class="">
+            <a href="city.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">The City</a>
+          </li>
+
+          <li class="">
+            <a href="contact.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="container mx-auto">
+        <div class="border-b border-grey-lighter py-16 lg:py-20">
+          <h1 class="pt-3 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl">
+            International <span style="color: #00aaa1;">Category Theory</span> Conference <span
+              style="color: #00aaa1;">2027</span>
+          </h1>
+          <p class="pt-3 font-body text-xl font-light text-primary dark:text-white">
+            27 June - 03 July 2027 &bullet; Patras, Greece
+          </p>
+          <a href="registration.html#register" id="register"
+            class="mt-12 block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl"
+            style="margin-right: 0.25cm;">
+            Register
+          </a>
+          <a href="registration.html#submit" id="register"
+            class="mt-12 block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl">
+            Submit a talk
+          </a>
+        </div>
+
+        <div class="border-b border-grey-lighter py-16 lg:py-20">
+          <div class="flex items-center pb-6">
+            <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white">
+              Welcome to CT2027!
+            </h3>
+          </div>
+          <div>
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              This is the official page of the International Category Theory Conference CT2027 which will take place at
+              the University of Patras, Greece, from the 27th of June to the 3rd of July 2027.
+            </p>
+          </div>
+          <div class="flex items-center pb-6" style="margin-top: 1cm;">
+            <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white">
+              Important dates
+            </h3>
+          </div>
+          <p style="margin-top: -.6cm; margin-bottom: .5cm;" class="font-body font-light text-primary dark:text-white">
+            (dates are dd/mm; <a class="my-link" href="https://en.wikipedia.org/wiki/Anywhere_on_Earth">anywhere on earth</a>)
+          </p>
+          <div class="font-body text-xl font-light text-primary dark:text-white" align="Center">
+            <table style="width: 60%; text-align: left;">
+              <tr>
+                <td>21/05</td>
+                <td>registration deadline</td>
+              </tr>
+              <tr>
+                <td>21/05</td>
+                <td>submission deadline</td>
+              </tr>
+            </table>
+          </div>
+          <div class="flex items-center pb-6">
+            <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;">
+              Invited Speakers
+            </h3>
+          </div>
+          <div class="dark:text-white" style="display: flex; justify-content: center; align-items: center;">
+            <table class="font-body text-xl font-light text-primary dark:text-white"
+              style="width: 60%; text-align: center;">
+              <tr>
+                <td><a class="my-link" href="#">John Smith</a></td>
+                <td>University of Somewhere</td>
+                <td>Country</td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="#">John Smith</a></td>
+                <td>University of Somewhere</td>
+                <td>Country</td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="#">John Smith</a></td>
+                <td>University of Somewhere</td>
+                <td>Country</td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="#">John Smith</a></td>
+                <td>University of Somewhere</td>
+                <td>Country</td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="#">John Smith</a></td>
+                <td>University of Somewhere</td>
+                <td>Country</td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="#">John Smith</a></td>
+                <td>University of Somewhere</td>
+                <td>Country</td>
+              </tr>
+            </table>
+          </div>
+          <div class="font-body text-xl font-light text-primary dark:text-white"
+            style="display: flex; justify-content: center; align-items: center;">
+            <table style="margin: 1.5cm; text-align: center;">
+              <tr>
+                <th>Scientific Committee</th>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="https://perso.uclouvain.be/marino.gran/">Marino Gran</a> (chair)</td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="#">Committee member</a></td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="#">Committee member</a></td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="#">Committee member</a></td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="#">Committee member</a></td>
+              </tr>
+            </table>
+            <table style="margin: 1.5cm; text-align: center;">
+              <tr>
+                <th>Organizing Committee</th>
+              </tr>
+              <tr>
+                <td>Vassilis Aravantinos-Sotiropoulos</td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="https://thalis.math.upatras.gr/~pkarazer/">Panagis Karazeris</a></td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="https://sites.google.com/view/floriandeleger/">Florian De Leger</a></td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="https://graptismath.net/">George Raptis</a></td>
+              </tr>
+              <tr>
+                <td><a class="my-link" href="http://www.math.ntua.gr/~cvasilak/">Christina Vasilakopoulou</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="dark:text-white" align="center">
+            <p style="text-align: center;">Supported by</p>
+            <span style="display:inline-block; margin: .5cm;">
+              <a href="https://www.upatras.gr/en/"><img src="assets/img/patraslogo2.png" width="250px" height="auto"></a>
+            </span>
+            <span style="display:inline-block; margin: .5cm;">
+              <a href="https://ntua.gr/en/"><img src="assets/img/ntualogo.png" width="100px" height="auto"></a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto">
+      <p style="padding: 10pt; text-align: center;">&copy; CT2027. All Rights Reserved.</p>
+    </div>
+
+  </div>
+
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>

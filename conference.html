@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+
+  <title>The Conference | CT2027</title>
+
+  <meta name="description" content="Information about CT2027" />
+
+  <link rel="canonical" href="https://ct2027.github.io/conference.html" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" /> <!--must be 512*512 pixels-->
+
+  <link crossorigin="anonymous" href="assets/styles/main.min.css" media="screen" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles/atom-one-dark.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+
+  <script src="assets/js/highlight.min.js"></script>
+  <script src="assets/js/alpine.js" defer></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+
+
+<body x-data="global()" x-init="themeInit()" :class="isMobileMenuOpen ? 'max-h-screen overflow-hidden relative' : ''"
+  class="dark:bg-primary">
+
+  <div id="main">
+    <div class="container mx-auto">
+      <div class="flex items-center justify-between py-6 lg:py-10">
+        <a href="/" class="flex items-center">
+          <img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />
+          <p class="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block">
+            <span style="margin-left: 5pt;">CT</span><span style="color: #00aaa1;">2027</span>
+          </p>
+        </a>
+        <div class="flex items-center lg:hidden">
+
+          <svg width="24" height="15" xmlns="http://www.w3.org/2000/svg" @click="isMobileMenuOpen = true"
+            class="fill-current text-primary dark:text-white">
+            <g fill-rule="evenodd">
+              <rect width="24" height="3" rx="1.5" />
+              <rect x="8" y="6" width="16" height="3" rx="1.5" />
+              <rect x="4" y="12" width="20" height="3" rx="1.5" />
+            </g>
+          </svg>
+        </div>
+        <div class="hidden lg:block">
+          <ul class="flex items-center">
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="index.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Home</a>
+            </li>
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="conference.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">The
+                Conference</a>
+            </li>
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="city.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">The
+                City</a>
+            </li>
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="contact.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="pointer-events-none fixed inset-0 z-50 flex bg-black bg-opacity-80 opacity-0 transition-opacity lg:hidden"
+      :class="isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : ''">
+      <div class="ml-auto w-2/3 bg-green p-4 md:w-1/3">
+        <i class="bx bx-x absolute top-0 right-0 mt-4 mr-4 text-4xl text-white" @click="isMobileMenuOpen = false"></i>
+        <ul class="mt-8 flex flex-col">
+
+          <li class="">
+            <a href="index.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">Home</a>
+          </li>
+
+          <li class="">
+            <a href="conference.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">The
+              Conference</a>
+          </li>
+
+          <li class="">
+            <a href="city.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">The City</a>
+          </li>
+
+          <li class="">
+            <a href="contact.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="container mx-auto">
+        <div class="py-16 lg:py-20">
+          <div>
+            <img src="assets/img/conference.svg" style="width: auto; height: 40px;">
+          </div>
+          <h1
+            class="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl flex items-baseline justify-between w-full">
+            <span>The <span class="cooltitle">Conference</span></span>
+          </h1>
+
+          <p style="margin-top: .25cm; margin-bottom: -.6cm;" class="font-body font-light text-primary dark:text-white">
+            <a class="my-link" href="conference.html#venue">Venue</a> &bull;
+            <a class="my-link" href="conference.html#programme">Programme</a> &bull;
+            <a class="my-link" href="conference.html#social">Social activities</a> &bull;
+            <a class="my-link" href="conference.html#participants">Participants</a> &bull;
+            <a class="my-link" href="conference.html#photos">Conference Photos</a>
+          </p>
+
+          <a href="registration.html#register" id="register"
+            class="mt-12 block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl"
+            style="margin-right: 0.25cm;">
+            Register
+          </a>
+
+          <a href="registration.html#submit" id="register"
+            class="mt-12 block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl"
+            style="margin-right: 0.25cm;">
+            Submit a talk
+          </a>
+
+          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+            id="venue">
+            Venue
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              The morning sessions of the conference will be held at some amphitheater of a specific building at the
+              University of Patras while the afternoon, parallel sessions will be held at specific rooms on the same
+              building.
+            </p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50125.54480771231!2d21.725434438320903!3d38.25986481896956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!0x135e4b9538cdf55f%3A0x13e1cce4767db7d7!2zzqPPhc69zrXOtM-BzrnOsc66z4wgJiDOoM6_zrvOuc-EzrnPg8-EzrnOus-MIM6azq3Ovc-Ez4HOvw!5e0!3m2!1sel!2sgr!4v1753456260093!5m2!1sel!2sgr"
+              style="padding: 1cm; border: 0; width: 80vw; height: 50vh; max-width: 800px;" allowfullscreen=""
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+            id="programme">
+            Programme
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              Below is the conference programme. You can also download it directly <a class="my-link" href="#">here<img src="assets/img/download.svg" style="width: auto; height: 20pt;display: inline; vertical-align: bottom;"></a>.
+            </p>
+            <embed style="padding: 1cm; width: 80vw; height: 80vh; max-width: 800px;" src="test.pdf"
+              type="application/pdf">
+
+            <style type="text/css">
+              .tg {
+                border-collapse: collapse;
+                border-color: #93a1a1;
+                border-spacing: 0;
+                margin: 0px auto;
+              }
+
+              .tg td {
+                background-color: #fdf6e3;
+                border-bottom-width: 1px;
+                border-color: #93a1a1;
+                border-style: solid;
+                border-top-width: 1px;
+                border-width: 0px;
+                color: #002b36;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                overflow: hidden;
+                padding: 10px 5px;
+                word-break: normal;
+              }
+
+              .tg th {
+                background-color: #657b83;
+                border-bottom-width: 1px;
+                border-color: #93a1a1;
+                border-style: solid;
+                border-top-width: 1px;
+                border-width: 0px;
+                color: #fdf6e3;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                font-weight: normal;
+                overflow: hidden;
+                padding: 10px 5px;
+                word-break: normal;
+              }
+
+              .tg .tg-ezbu {
+                background-color: #eee8d5;
+                border-color: inherit;
+                text-align: center;
+                vertical-align: top
+              }
+
+              .tg .tg-ih3h {
+                border-color: inherit;
+                position: -webkit-sticky;
+                position: sticky;
+                text-align: center;
+                top: -1px;
+                vertical-align: top;
+                will-change: transform;
+                background-color: #00aaa1;
+                color: #072371;
+              }
+
+              .tg .tg-c3ow {
+                border-color: inherit;
+                text-align: center;
+                vertical-align: top
+              }
+
+              .tg .tg-cw6g {
+                border-color: inherit;
+                text-align: center;
+                vertical-align: top;
+                background-color: #00aaa1;
+                color: #072371;
+              }
+
+              .tg .tg-hz2d {
+                border-color: inherit;
+                text-align: center;
+                vertical-align: top;
+                background-color: #00aaa1;
+                color: #072371;
+              }
+
+              @media screen and (max-width: 767px) {
+                .tg {
+                  width: auto !important;
+                }
+
+                .tg col {
+                  width: auto !important;
+                }
+
+                .tg-wrap {
+                  overflow-x: auto;
+                  -webkit-overflow-scrolling: touch;
+                  margin: auto 0px;
+                }
+              }
+            </style>
+            <div class="tg-wrap">
+              <table class="tg">
+                <thead>
+                  <tr>
+                    <th class="tg-ih3h"></th>
+                    <th class="tg-ih3h" colspan="2">Day 1</th>
+                    <th class="tg-ih3h" colspan="2">Monday</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="tg-c3ow">9.00-10.30</td>
+                    <td class="tg-ezbu" colspan="2">Big Talk 1</td>
+                    <td class="tg-ezbu" colspan="2">Big Talk 3</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow">10.30-11.00</td>
+                    <td class="tg-ezbu" colspan="2">Coffee break</td>
+                    <td class="tg-ezbu" colspan="2">Coffee Break</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow">11.00-13.00</td>
+                    <td class="tg-ezbu" colspan="2">Big Talk 2</td>
+                    <td class="tg-ezbu" colspan="2">Big Talk 4</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow">13.00-15.00</td>
+                    <td class="tg-ezbu" colspan="2">Lunch</td>
+                    <td class="tg-ezbu" colspan="2">Lunch</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow"></td>
+                    <td class="tg-hz2d">Room 1</td>
+                    <td class="tg-cw6g">Room 2</td>
+                    <td class="tg-ezbu"></td>
+                    <td class="tg-c3ow"></td>
+                  </tr>
+                  <tr>
+                    <td class="tg-c3ow">15.00-16.00</td>
+                    <td class="tg-ezbu">Talk 1</td>
+                    <td class="tg-c3ow">Talk 2</td>
+                    <td class="tg-ezbu" colspan="2">DInner</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+            id="social">
+            Social activities
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              Social activities will be announced in due time.
+            </p>
+          </div>
+
+          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+            id="participants">
+            Participants
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0 dark:text-white" align="center">
+            <table style="border-collapse: separate; border-spacing: 50px 0px; text-align: center; margin-top: .5cm;">
+              <tr>
+                <th>Name</th>
+                <th>Affiliation</th>
+                <th>Country</th>
+              </tr>
+              <tr>
+                <td>John Smith</td>
+                <td>University of Awesome</td>
+                <td>Ireland</td>
+              </tr>
+              <tr>
+                <td>John Smith</td>
+                <td>University of Awesome</td>
+                <td>Ireland</td>
+              </tr>
+              <tr>
+                <td>John Smith</td>
+                <td>University of Awesome</td>
+                <td>Ireland</td>
+              </tr>
+              <tr>
+                <td>John Smith</td>
+                <td>University of Awesome</td>
+                <td>Ireland</td>
+              </tr>
+              <tr>
+                <td>John Smith</td>
+                <td>University of Awesome</td>
+                <td>Ireland</td>
+              </tr>
+              <tr>
+                <td>John Smith</td>
+                <td>University of Awesome</td>
+                <td>Ireland</td>
+              </tr>
+              <tr>
+                <td>John Smith</td>
+                <td>University of Awesome</td>
+                <td>Ireland</td>
+              </tr>
+            </table>
+          </div>
+
+          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+            id="photos">
+            Conference Photos
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              The conference group photos will be posted here.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto">
+      <p style="padding: 10pt; text-align: center;">&copy; CT2027. All Rights Reserved.</p>
+    </div>
+  </div>
+
+
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>

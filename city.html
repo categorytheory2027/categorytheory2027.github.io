@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+
+  <title>The City | CT2027</title>
+
+  <meta name="description" content="CT2027 - Information about Patras" />
+
+  <link rel="canonical" href="https://ct2027.github.io/city.html" />
+  <link rel="icon" type="image/png" href="assets/img/logo.png" /> <!--must be 512*512 pixels-->
+
+  <link crossorigin="anonymous" href="assets/styles/main.min.css" media="screen" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles/atom-one-dark.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
+
+  <script src="assets/js/highlight.min.js"></script>
+  <script src="assets/js/alpine.js" defer></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+</head>
+
+
+<body x-data="global()" x-init="themeInit()" :class="isMobileMenuOpen ? 'max-h-screen overflow-hidden relative' : ''"
+  class="dark:bg-primary">
+
+  <div id="main">
+    <div class="container mx-auto">
+      <div class="flex items-center justify-between py-6 lg:py-10">
+        <a href="/" class="flex items-center">
+          <img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />
+          <p class="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block">
+            <span style="margin-left: 5pt;">CT</span><span style="color: #00aaa1;">2027</span>
+          </p>
+        </a>
+        <div class="flex items-center lg:hidden">
+
+          <svg width="24" height="15" xmlns="http://www.w3.org/2000/svg" @click="isMobileMenuOpen = true"
+            class="fill-current text-primary dark:text-white">
+            <g fill-rule="evenodd">
+              <rect width="24" height="3" rx="1.5" />
+              <rect x="8" y="6" width="16" height="3" rx="1.5" />
+              <rect x="4" y="12" width="20" height="3" rx="1.5" />
+            </g>
+          </svg>
+        </div>
+        <div class="hidden lg:block">
+          <ul class="flex items-center">
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="index.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Home</a>
+            </li>
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="conference.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">The
+                Conference</a>
+            </li>
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="city.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">The
+                City</a>
+            </li>
+
+            <li class="group relative mr-6 mb-1">
+              <div
+                class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
+              </div>
+              <a href="contact.html"
+                class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="pointer-events-none fixed inset-0 z-50 flex bg-black bg-opacity-80 opacity-0 transition-opacity lg:hidden"
+      :class="isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : ''">
+      <div class="ml-auto w-2/3 bg-green p-4 md:w-1/3">
+        <i class="bx bx-x absolute top-0 right-0 mt-4 mr-4 text-4xl text-white" @click="isMobileMenuOpen = false"></i>
+        <ul class="mt-8 flex flex-col">
+
+          <li class="">
+            <a href="index.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">Home</a>
+          </li>
+
+          <li class="">
+            <a href="conference.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">The
+              Conference</a>
+          </li>
+
+          <li class="">
+            <a href="city.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">The City</a>
+          </li>
+
+          <li class="">
+            <a href="contact.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="container mx-auto">
+        <div class="py-16 lg:py-20">
+          <div>
+            <img src="assets/img/city.svg" style="width: auto; height: 40px;">
+          </div>
+          <h1
+            class="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl flex items-baseline justify-between w-full">
+            <span>The <span class="cooltitle">City</span></span>
+          </h1>
+
+          <p style="margin-top: .25cm;" class="font-body font-light text-primary dark:text-white">
+            <a class="my-link" href="city.html#the-city">The city of Patras</a> &bull;
+            <a class="my-link" href="city.html#travel">Travel to & from Patras</a> &bull;
+            <a class="my-link" href="city.html#accommodation">Accommodation options</a> &bull;
+            <a class="my-link" href="city.html#getting-around">Getting around</a> &bull;
+            <a class="my-link" href="city.html#todo">Things to do</a>
+          </p>
+
+          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+            id="the-city">
+            The city of Patras
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              Patras is Greece's third-largest city and the regional capital and largest city of Western
+              Greece,
+              215 km (134 mi) west of Athens. The city is built at the foot of Mount Panachaikon,
+              overlooking the Gulf of Patras.
+            </p>
+
+            <div style="display: flex; justify-content: center; gap: 20px; padding: 20pt;">
+              <img src="assets/img/patras2.jpg" style="height: 350px;">
+              <img src="assets/img/patras3.jpg" style="height: 350px;">
+            </div>
+
+            <p class="font-body text-xl font-light text-primary dark:text-white" style="margin-top: .5cm;">
+              Every year, in February, the city hosts one of Europe's largest carnivals. Notable features
+              of the Patras Carnival include its mammoth satirical floats and balls and parades, enjoyed
+              by thousands of visitors.
+            </p>
+            <p class="font-body text-xl font-light text-primary dark:text-white" style="margin-top: .5cm;">
+              If you care to find out more about our city you can have a look at the official <a class="my-link"
+                href="https://www.visitgreece.gr/mainland/peloponnese/patras/">"visit Greece" page
+                for Patras</a>.
+            </p>
+          </div>
+
+          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+            id="travel">
+            Travel to & from Patras
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              Information on how to get to Patras will be added here.
+            </p>
+          </div>
+
+          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+            id="accommodation">
+            Accommodation options
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              Accommodation suggestions and special offers will be announced closer to the conference dates.
+            </p>
+          </div>
+
+          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+            id="getting-around">
+            Getting around in Patras
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              Talk about taxi, bus etc.
+            </p>
+          </div>
+
+          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+            id="todo">
+            Things to do in Patras
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              If you have time to spare and want to explore our city, we recommend the following things. Also include
+              any special offers that will be available to participants, if any, like discounts on local sights etc.
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container mx-auto">
+      <p style="padding: 10pt; text-align: center;">&copy; CT2027. All Rights Reserved.</p>
+    </div>
+
+  </div>
+
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
