@@ -16,9 +16,19 @@
   <link rel="stylesheet" href="assets/styles/atom-one-dark.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
 
+  <link rel="stylesheet" href="assets/katex/katex.min.css">
+
   <script src="assets/js/highlight.min.js"></script>
   <script src="assets/js/alpine.js" defer></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="assets/katex/katex.min.js"></script>
+  <script defer src="assets/katex/contrib/auto-render.min.js" 
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>
@@ -32,7 +42,7 @@
     <div class="container mx-auto">
       <div class="flex items-center justify-between py-6 lg:py-10">
         <a href="/" class="flex items-center">
-          <img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />
+          <!--<img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />-->
           <p class="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block">
             <span style="margin-left: 5pt;">CT</span><span style="color: #00aaa1;">2027</span>
           </p>
@@ -185,7 +195,7 @@
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              Accommodation suggestions and special offers will be announced closer to the conference dates.
+              Accommodation suggestions will be announced closer to the conference dates.
             </p>
           </div>
 
@@ -196,7 +206,7 @@
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              Talk about taxi, bus etc.
+              Information on buses, taxis etc.
             </p>
           </div>
 
@@ -207,8 +217,7 @@
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              If you have time to spare and want to explore our city, we recommend the following things. Also include
-              any special offers that will be available to participants, if any, like discounts on local sights etc.
+              If you have time to spare and want to explore our city, we will recommend a few things.
             </p>
           </div>
 

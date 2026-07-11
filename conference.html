@@ -16,9 +16,19 @@
   <link rel="stylesheet" href="assets/styles/atom-one-dark.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
 
+  <link rel="stylesheet" href="assets/katex/katex.min.css">
+
   <script src="assets/js/highlight.min.js"></script>
   <script src="assets/js/alpine.js" defer></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="assets/katex/katex.min.js"></script>
+  <script defer src="assets/katex/contrib/auto-render.min.js" 
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>
@@ -32,7 +42,7 @@
     <div class="container mx-auto">
       <div class="flex items-center justify-between py-6 lg:py-10">
         <a href="/" class="flex items-center">
-          <img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />
+          <!--<img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />-->
           <p class="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block">
             <span style="margin-left: 5pt;">CT</span><span style="color: #00aaa1;">2027</span>
           </p>
@@ -133,8 +143,8 @@
             <a class="my-link" href="conference.html#venue">Venue</a> &bull;
             <a class="my-link" href="conference.html#programme">Programme</a> &bull;
             <a class="my-link" href="conference.html#social">Social activities</a> &bull;
-            <a class="my-link" href="conference.html#participants">Participants</a> &bull;
-            <a class="my-link" href="conference.html#photos">Conference Photos</a>
+            <a class="my-link" href="conference.html#participants">Participants</a> <!--&bull;
+            <a class="my-link" href="conference.html#photos">Conference Photos</a>-->
           </p>
 
           <a href="registration.html#register" id="register"
@@ -156,15 +166,11 @@
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              The morning sessions of the conference will be held at some amphitheater of a specific building at the
-              University of Patras while the afternoon, parallel sessions will be held at specific rooms on the same
-              building.
+              More information about where the conference will take place will be announced here.
             </p>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50125.54480771231!2d21.725434438320903!3d38.25986481896956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!0x135e4b9538cdf55f%3A0x13e1cce4767db7d7!2zzqPPhc69zrXOtM-BzrnOsc66z4wgJiDOoM6_zrvOuc-EzrnPg8-EzrnOus-MIM6azq3Ovc-Ez4HOvw!5e0!3m2!1sel!2sgr!4v1753456260093!5m2!1sel!2sgr"
-              style="padding: 1cm; border: 0; width: 80vw; height: 50vh; max-width: 800px;" allowfullscreen=""
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+            <div style="display: flex; justify-content: center;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50132.98835693622!2d21.704406260345444!3d38.24907460485826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135e3599a524ed2d%3A0x400bd2ce2b98ca0!2zzqDOrM-Ez4HOsQ!5e0!3m2!1sel!2sgr!4v1783774367053!5m2!1sel!2sgr" width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
           </div>
 
           <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
@@ -174,153 +180,17 @@
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              Below is the conference programme. You can also download it directly <a class="my-link" href="#">here<img src="assets/img/download.svg" style="width: auto; height: 20pt;display: inline; vertical-align: bottom;"></a>.
+              Below will be the conference programme. <!--You can also download it directly <a class="my-link" href="#">here<img src="assets/img/download.svg" style="width: auto; height: 20pt;display: inline; vertical-align: bottom;"></a>.-->
             </p>
-            <embed style="padding: 1cm; width: 80vw; height: 80vh; max-width: 800px;" src="files/test.pdf"
-              type="application/pdf">
+            <!--<embed style="padding: 1cm; width: 80vw; height: 80vh; max-width: 800px;" src="files/test.pdf"
+              type="application/pdf">-->
+          </div>
 
-            <style type="text/css">
-              .tg {
-                border-collapse: collapse;
-                border-color: #93a1a1;
-                border-spacing: 0;
-                margin: 0px auto;
-              }
-
-              .tg td {
-                background-color: #fdf6e3;
-                border-bottom-width: 1px;
-                border-color: #93a1a1;
-                border-style: solid;
-                border-top-width: 1px;
-                border-width: 0px;
-                color: #002b36;
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-                overflow: hidden;
-                padding: 10px 5px;
-                word-break: normal;
-              }
-
-              .tg th {
-                background-color: #657b83;
-                border-bottom-width: 1px;
-                border-color: #93a1a1;
-                border-style: solid;
-                border-top-width: 1px;
-                border-width: 0px;
-                color: #fdf6e3;
-                font-family: Arial, sans-serif;
-                font-size: 14px;
-                font-weight: normal;
-                overflow: hidden;
-                padding: 10px 5px;
-                word-break: normal;
-              }
-
-              .tg .tg-ezbu {
-                background-color: #eee8d5;
-                border-color: inherit;
-                text-align: center;
-                vertical-align: top
-              }
-
-              .tg .tg-ih3h {
-                border-color: inherit;
-                position: -webkit-sticky;
-                position: sticky;
-                text-align: center;
-                top: -1px;
-                vertical-align: top;
-                will-change: transform;
-                background-color: #00aaa1;
-                color: #072371;
-              }
-
-              .tg .tg-c3ow {
-                border-color: inherit;
-                text-align: center;
-                vertical-align: top
-              }
-
-              .tg .tg-cw6g {
-                border-color: inherit;
-                text-align: center;
-                vertical-align: top;
-                background-color: #00aaa1;
-                color: #072371;
-              }
-
-              .tg .tg-hz2d {
-                border-color: inherit;
-                text-align: center;
-                vertical-align: top;
-                background-color: #00aaa1;
-                color: #072371;
-              }
-
-              @media screen and (max-width: 767px) {
-                .tg {
-                  width: auto !important;
-                }
-
-                .tg col {
-                  width: auto !important;
-                }
-
-                .tg-wrap {
-                  overflow-x: auto;
-                  -webkit-overflow-scrolling: touch;
-                  margin: auto 0px;
-                }
-              }
-            </style>
-            <div class="tg-wrap">
-              <table class="tg">
-                <thead>
-                  <tr>
-                    <th class="tg-ih3h"></th>
-                    <th class="tg-ih3h" colspan="2">Day 1</th>
-                    <th class="tg-ih3h" colspan="2">Monday</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="tg-c3ow">9.00-10.30</td>
-                    <td class="tg-ezbu" colspan="2">Big Talk 1</td>
-                    <td class="tg-ezbu" colspan="2">Big Talk 3</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-c3ow">10.30-11.00</td>
-                    <td class="tg-ezbu" colspan="2">Coffee break</td>
-                    <td class="tg-ezbu" colspan="2">Coffee Break</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-c3ow">11.00-13.00</td>
-                    <td class="tg-ezbu" colspan="2">Big Talk 2</td>
-                    <td class="tg-ezbu" colspan="2">Big Talk 4</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-c3ow">13.00-15.00</td>
-                    <td class="tg-ezbu" colspan="2">Lunch</td>
-                    <td class="tg-ezbu" colspan="2">Lunch</td>
-                  </tr>
-                  <tr>
-                    <td class="tg-c3ow"></td>
-                    <td class="tg-hz2d">Room 1</td>
-                    <td class="tg-cw6g">Room 2</td>
-                    <td class="tg-ezbu"></td>
-                    <td class="tg-c3ow"></td>
-                  </tr>
-                  <tr>
-                    <td class="tg-c3ow">15.00-16.00</td>
-                    <td class="tg-ezbu">Talk 1</td>
-                    <td class="tg-c3ow">Talk 2</td>
-                    <td class="tg-ezbu" colspan="2">DInner</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+          <div style="display: flex; justify-content: center;">
+              <iframe 
+                src="https://docs.google.com/spreadsheets/d/e/2PACX-1vScUEMBeW9vxfYFC2nA4cLm1ZgonJfgVUJEnc71E2fSliW3l6e0LB48I4W5kMPE1cXlMVTst_C9-DIj/pubhtml?gid=0&single=true&widget=true&headers=false&range=A1:F10&chrome=false"
+                style="width: 100%; height: 500px;"
+              ></iframe>
           </div>
 
           <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
@@ -339,52 +209,7 @@
             Participants
           </h3>
 
-          <div class="pr-2 pt-3 sm:pt-0 dark:text-white" align="center">
-            <table style="border-collapse: separate; border-spacing: 50px 0px; text-align: center; margin-top: .5cm;">
-              <tr>
-                <th>Name</th>
-                <th>Affiliation</th>
-                <th>Country</th>
-              </tr>
-              <tr>
-                <td>John Smith</td>
-                <td>University of Awesome</td>
-                <td>Ireland</td>
-              </tr>
-              <tr>
-                <td>John Smith</td>
-                <td>University of Awesome</td>
-                <td>Ireland</td>
-              </tr>
-              <tr>
-                <td>John Smith</td>
-                <td>University of Awesome</td>
-                <td>Ireland</td>
-              </tr>
-              <tr>
-                <td>John Smith</td>
-                <td>University of Awesome</td>
-                <td>Ireland</td>
-              </tr>
-              <tr>
-                <td>John Smith</td>
-                <td>University of Awesome</td>
-                <td>Ireland</td>
-              </tr>
-              <tr>
-                <td>John Smith</td>
-                <td>University of Awesome</td>
-                <td>Ireland</td>
-              </tr>
-              <tr>
-                <td>John Smith</td>
-                <td>University of Awesome</td>
-                <td>Ireland</td>
-              </tr>
-            </table>
-          </div>
-
-          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+          <!--<h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
             id="photos">
             Conference Photos
           </h3>
@@ -393,7 +218,7 @@
             <p class="font-body text-xl font-light text-primary dark:text-white">
               The conference group photos will be posted here.
             </p>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>

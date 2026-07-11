@@ -24,9 +24,19 @@
   <link rel="stylesheet" href="assets/styles/atom-one-dark.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
 
+  <link rel="stylesheet" href="assets/katex/katex.min.css">
+
   <script src="assets/js/highlight.min.js"></script>
   <script src="assets/js/alpine.js" defer></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script defer src="assets/katex/katex.min.js"></script>
+  <script defer src="assets/katex/contrib/auto-render.min.js" 
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+      ]
+    });">
+  </script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>
@@ -40,7 +50,7 @@
     <div class="container mx-auto">
       <div class="flex items-center justify-between py-6 lg:py-10">
         <a href="/" class="flex items-center">
-          <img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />
+          <!--<img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />-->
           <p class="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block">
             <span style="margin-left: 5pt;">CT</span><span style="color: #00aaa1;">2027</span>
           </p>
@@ -130,7 +140,7 @@
       <div class="container mx-auto">
         <div class="border-b border-grey-lighter py-16 lg:py-20">
           <h1 class="pt-3 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl">
-            International <span style="color: #00aaa1;">Category Theory</span> Conference <span
+            International <br> <span style="color: #00aaa1;">Category Theory</span> <br> Conference <span
               style="color: #00aaa1;">2027</span>
           </h1>
           <p class="pt-3 font-body text-xl font-light text-primary dark:text-white">
@@ -171,11 +181,11 @@
             <table style="width: 60%; text-align: left;">
               <tr>
                 <td>tba</td>
-                <td>registration deadline</td>
+                <td>submission deadline</td>
               </tr>
               <tr>
                 <td>tba</td>
-                <td>submission deadline</td>
+                <td>registration deadline</td>
               </tr>
             </table>
           </div>
@@ -183,45 +193,33 @@
             <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;">
               Invited Speakers
             </h3>
+
+            
           </div>
           <div class="dark:text-white" style="display: flex; justify-content: center; align-items: center;">
             <table class="font-body text-xl font-light text-primary dark:text-white"
-              style="width: 60%; text-align: center;">
+              style="width: 60%; text-align: left;">
               <tr>
-                <td><a class="my-link" href="#">tba</a></td>
-                <td>University of Somewhere</td>
-                <td>Country</td>
+                <td><a class="my-link" href="#">tba, university, country</a></td>
               </tr>
               <tr>
                 <td><a class="my-link" href="#">tba</a></td>
-                <td>University of Somewhere</td>
-                <td>Country</td>
               </tr>
               <tr>
                 <td><a class="my-link" href="#">tba</a></td>
-                <td>University of Somewhere</td>
-                <td>Country</td>
               </tr>
               <tr>
                 <td><a class="my-link" href="#">tba</a></td>
-                <td>University of Somewhere</td>
-                <td>Country</td>
+
               </tr>
               <tr>
                 <td><a class="my-link" href="#">tba</a></td>
-                <td>University of Somewhere</td>
-                <td>Country</td>
-              </tr>
-              <tr>
-                <td><a class="my-link" href="#">tba</a></td>
-                <td>University of Somewhere</td>
-                <td>Country</td>
               </tr>
             </table>
           </div>
           <div class="font-body text-xl font-light text-primary dark:text-white"
-            style="display: flex; justify-content: center; align-items: flex-start;">
-            <table style="margin: 1.5cm; text-align: center;">
+            style="display: flex; justify-content: center; align-items: center;">
+            <table style="margin: 1.5cm; text-align: left;">
               <tr>
                 <th>Scientific Committee</th>
               </tr>
@@ -238,7 +236,7 @@
                 <td><a class="my-link" href="https://thalis.math.upatras.gr/~pkarazer/">Panagis Karazeris</a></td>
               </tr>
               <tr>
-                <td><a class="my-link" href="http://users.mat.unimi.it/users/mantovani/">Sandra Mantovani</a></td>
+                <td><a class="my-link" href="https://www.unimi.it/en/ugov/person/sandra-mantovani">Sandra Mantovani</a></td>
               </tr>
               <tr>
                 <td><a class="my-link" href="https://www.uu.nl/staff/IMoerdijk">Ieke Moerdijk</a></td>
@@ -247,7 +245,7 @@
                 <td><a class="my-link" href="http://web.science.mq.edu.au/~street/street.html">Ross Street</a></td>
               </tr>
             </table>
-            <table style="margin: 1.5cm; text-align: center;">
+            <table style="margin: 1.5cm; text-align: left;">
               <tr>
                 <th>Organizing Committee</th>
               </tr>
