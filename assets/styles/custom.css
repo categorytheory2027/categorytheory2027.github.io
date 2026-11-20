@@ -271,8 +271,62 @@ a {
     text-decoration: line-through;
 }
 
+/* registration fees */
+.fees {
+    width: auto;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.fees th,
+.fees td {
+    padding: .4rem .9rem;
+    text-align: center;
+}
+
+.fees th {
+    font-weight: 600;
+    line-height: 1.3;
+    vertical-align: bottom;
+}
+
+.fees td:first-child {
+    text-align: left;
+    padding-left: 0;
+}
+
+.fees td + td {
+    font-weight: 600;
+}
+
+.fees-note {
+    font-size: .8em;
+    font-weight: 300;
+    opacity: .75;
+}
+
+.fees tr:not(:last-child) th,
+.fees tr:not(:last-child) td {
+    border-bottom: 1px solid rgba(7, 35, 68, 0.15);
+}
+
+.dark .fees tr:not(:last-child) th,
+.dark .fees tr:not(:last-child) td {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
 /* phones */
 @media (max-width: 639px) {
+    .fees {
+        font-size: min(1.125rem, 3.6vw);
+    }
+
+    .fees th,
+    .fees td {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
     p {
         text-align: left;
     }
