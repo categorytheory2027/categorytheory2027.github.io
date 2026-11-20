@@ -1,0 +1,117 @@
+% !TEX program = pdflatex
+% CT2027 abstract template. The recommended compiler is pdflatex. 
+\documentclass[11pt,a4paper,oneside]{article}
+
+\usepackage{amsmath}
+
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+\fi
+\usepackage[T1]{fontenc}
+\IfFileExists{mathdesign.sty}
+  {\usepackage[charter,cal=cmcal]{mathdesign}}
+  {\usepackage{amssymb,mathrsfs}}
+
+\usepackage{graphicx}
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\usepackage{tikz-cd}
+\tikzcdset{arrow style=tikz, diagrams={>={Straight Barb[scale=0.75]}}}
+
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\newtheorem*{example}{Example}
+\theoremstyle{plain}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{corollary}{Corollary}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\makeatletter
+\newcount\ct@authors
+\def\ct@list{}
+\newcommand{\ct@add}[2]{\global\advance\ct@authors by 1
+  \g@addto@macro\ct@list{\parbox[t]{0.5\linewidth}{\centering #1\\[2pt]{\small\itshape #2}}\hspace{0pt}}}
+\newcommand{\speaker}[2]{\ct@add{\ifnum\ct@authors>1 \textbf{#1} (speaker)\else #1\fi}{#2}}
+\newcommand{\coauthor}[2]{\ct@add{#1}{#2}}
+\renewcommand{\maketitle}{%
+  \begin{center}
+    {\LARGE\bfseries \@title\par}\bigskip
+    \parbox[t]{0.9\textwidth}{\ifnum\ct@authors>1 \raggedright\else\centering\fi\setlength{\lineskip}{2.5ex}\ct@list}\par  \end{center}\bigskip}
+\makeatother
+
+\makeatletter
+\renewenvironment{thebibliography}[1]
+  {%
+    \par\medskip\noindent
+    {\bfseries References\par}%
+    \small
+    \list{\@biblabel{\@arabic\c@enumiv}}%
+      {%
+        \settowidth\labelwidth{\@biblabel{#1}}%
+        \leftmargin=\labelwidth
+        \advance\leftmargin\labelsep
+        \itemsep=0.2em
+        \parsep=0pt
+        \topsep=0.2em
+        \partopsep=0pt
+        \usecounter{enumiv}%
+      }%
+    \sloppy
+  }
+  {\endlist}
+\makeatother
+
+
+% ------------------- Fill in ---------------------
+
+\title{The title of the talk}
+
+% One \speaker and any number of \coauthor lines, in alphabetical order.
+\coauthor{coauthor A}{affiliation}
+\coauthor{coauthor B}{affiliation}
+\speaker{speaker C}{affiliation}
+\coauthor{coauthor D}{affiliation}
+
+% -------------------------------------------------
+
+
+\begin{document}
+
+\maketitle
+
+This is plain text and this \cite{maclane} is a citation. You can have inline math like $f:X\to Y$, number systems $\mathbb{N},\mathbb{Q}$ and $\mathbb{R}$ as well as calligraphic and scripted letters for categories like $\mathcal{C}$ or $\mathscr{C}$. Display math 
+\[f:A\to B: t\mapsto f(t).\]
+
+\begin{theorem}
+This is a theorem and if you need a commutative diagram, here is one
+\[
+\begin{tikzcd}
+X \arrow[r, "f"] \arrow[d, "h"'] & Y \arrow[d, "\ell"] \\
+Z \arrow[r, "g"']                & W                  
+\end{tikzcd}
+\]
+\end{theorem}
+
+\begin{corollary}
+This is a consequence of the above theorem.
+\end{corollary}
+
+
+
+\begin{thebibliography}{9}
+
+\bibitem{maclane}
+S. Mac Lane, \emph{Categories for the Working Mathematician}, Springer, 1971.
+
+
+\end{thebibliography}
+
+
+\end{document}
