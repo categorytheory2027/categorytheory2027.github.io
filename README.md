@@ -1,1 +1,1 @@
-This is the official website of the International Category Theory Conference 2027 to be held in Patras, Greece. The template is [Atlas from redpixelthemes](https://redpixelthemes.com/templates/atlas/).
+This is the official website of the International Category Theory Conference 2027 to be held in Patras, Greece.

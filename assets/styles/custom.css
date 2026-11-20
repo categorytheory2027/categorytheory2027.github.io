@@ -21,6 +21,20 @@ a {
     margin-left: 5pt;
 }
 
+.site-logo {
+    width: auto;
+    height: 40px;
+}
+
+.site-logo-dark,
+.dark .site-logo-light {
+    display: none;
+}
+
+.dark .site-logo-dark {
+    display: block;
+}
+
 .section-title {
     margin-top: 1cm;
 }
