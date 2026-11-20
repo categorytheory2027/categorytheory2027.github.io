@@ -1,0 +1,363 @@
+/* CT2027 site styles (loaded after main.min.css) */
+
+/* links */
+a {
+    color: #006d75;
+}
+
+:where(.dark) a {
+    color: #00aaa1;
+}
+
+.accent {
+    color: #006d75;
+}
+
+.dark .accent {
+    color: #00aaa1;
+}
+
+.logo-ct {
+    margin-left: 5pt;
+}
+
+.section-title {
+    margin-top: 1cm;
+}
+
+.subsection-title {
+    margin-top: .6cm;
+}
+
+.page-icon {
+    width: auto;
+    height: 40px;
+}
+
+.sponsor-logo {
+    display: inline-block;
+    margin: 0.5cm;
+}
+
+/* invited speakers */
+.speakers,
+.speakers tr,
+.speakers td {
+    display: block;
+    width: 100%;
+}
+
+.speakers tbody {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+    .speakers tbody {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem 2.5rem;
+    }
+}
+
+.speakers td + td {
+    padding-left: 8pt;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* committees */
+.committees {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+@media (max-width: 767px) {
+    .committees {
+        grid-template-columns: 1fr;
+    }
+}
+
+.committee-card h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #006d75;
+}
+
+.committee-card h3::after {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 3px;
+    margin: 0.5rem 0 0.9rem;
+    border-radius: 2px;
+    background-color: #00aaa1;
+}
+
+.dark .committee-card h3 {
+    color: #00aaa1;
+}
+
+.committee-card li {
+    padding: 0.3rem 0;
+}
+
+.chair-badge {
+    display: inline-block;
+    margin-left: 0.4rem;
+    padding: 0 0.55rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1.4rem;
+    vertical-align: middle;
+    color: #fff;
+    background-color: #007c85;
+}
+
+/* slideshow */
+.slideshow {
+    position: relative;
+    margin: 1.5rem auto 0;
+}
+
+.slideshow-frame {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 2;
+    border-radius: 0.5rem;
+    background-color: rgba(7, 35, 68, 0.07);
+}
+
+.dark .slideshow-frame {
+    background-color: rgba(255, 255, 255, 0.07);
+}
+
+.slideshow-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.6s ease;
+}
+
+.slideshow-track img {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.slideshow-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    color: #fff;
+    background-color: rgba(7, 35, 68, 0.55);
+    transition: background-color 0.2s;
+}
+
+.slideshow-arrow:hover {
+    background-color: #00aaa1;
+}
+
+.slideshow-prev {
+    left: 0.75rem;
+}
+
+.slideshow-next {
+    right: 0.75rem;
+}
+
+.slideshow-dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+}
+
+.slideshow-dots button {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background-color: rgba(7, 35, 68, 0.25);
+}
+
+.dark .slideshow-dots button {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.slideshow-dots button.active,
+.dark .slideshow-dots button.active {
+    background-color: #00aaa1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .slideshow-track {
+        transition: none;
+    }
+}
+
+/* buttons */
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 3rem;
+}
+
+.cta-buttons a {
+    background-color: #007c85;
+}
+
+/* important dates */
+.dates {
+    width: auto;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.dates td {
+    white-space: nowrap;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+}
+
+.dates td:first-child {
+    padding-right: 1.5rem;
+}
+
+.dates td + td {
+    font-weight: 600;
+}
+
+.dates tr:not(:last-child) td {
+    border-bottom: 1px solid rgba(7, 35, 68, 0.15);
+}
+
+.dark .dates tr:not(:last-child) td {
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.dates tr.past {
+    opacity: .5;
+}
+
+.dates tr.past td + td {
+    text-decoration: line-through;
+}
+
+/* phones */
+@media (max-width: 639px) {
+    p {
+        text-align: left;
+    }
+
+    .text-xl {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+    }
+
+    .cta-buttons a {
+        flex: 1 1 10rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .dates {
+        font-size: min(1.125rem, 3.3vw);
+        line-height: 1.8;
+    }
+
+    .dates td:first-child {
+        padding-right: .75rem;
+    }
+}
+
+/* footer */
+.site-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid rgba(7, 35, 68, 0.15);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(7, 35, 68, 0.85);
+}
+
+.dark .site-footer {
+    border-top-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.site-footer p {
+    text-align: center;
+}
+
+.site-footer-title {
+    font-weight: 600;
+}
+
+/* current page in the nav */
+.current > div {
+    height: 0.5rem;
+    background-color: #00E5D4;
+}
+
+.bg-green a[aria-current="page"] {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+/* dark mode */
+.dark body {
+    color: #fff;
+}
+
+.dark a:hover {
+    color: #cceeec;
+}
+
+.dark a#register:hover {
+    background-color: #fff;
+    color: #072344;
+}
+
+.dark .border-grey-lighter {
+    border-color: #cceeec;
+}
+
+.dark .sponsor-logo {
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+.fill-current {
+    fill: currentColor;
+}
+
+/* header: theme button after the nav on desktop */
+@media (min-width: 1024px) {
+    .theme-slot {
+        order: 3;
+    }
+
+    .theme-slot + div {
+        margin-left: auto;
+    }
+
+    .theme-slot > button:first-child {
+        margin-right: 0;
+    }
+}

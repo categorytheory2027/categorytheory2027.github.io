@@ -9,10 +9,19 @@
 
   <meta name="description" content="Information about CT2027" />
 
-  <link rel="canonical" href="https://ct2027.github.io/conference.html" />
+  <link rel="canonical" href="https://categorytheory2027.github.io/conference.html" />
   <link rel="icon" type="image/png" href="assets/img/logo.png" /> <!--must be 512*512 pixels-->
 
+  <script>
+    // dark mode
+    try {
+      if (sessionStorage.getItem('theme') === 'dark')
+        document.documentElement.classList.add('dark');
+    } catch (e) {}
+  </script>
+
   <link crossorigin="anonymous" href="assets/styles/main.min.css" media="screen" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles/custom.css" />
   <link rel="stylesheet" href="assets/styles/atom-one-dark.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
 
@@ -44,19 +53,28 @@
         <a href="/" class="flex items-center">
           <!--<img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />-->
           <p class="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block">
-            <span style="margin-left: 5pt;">CT</span><span style="color: #00aaa1;">2027</span>
+            <span class="logo-ct">CT</span><span class="accent">2027</span>
           </p>
         </a>
-        <div class="flex items-center lg:hidden">
+        <div class="theme-slot flex items-center">
 
-          <svg width="24" height="15" xmlns="http://www.w3.org/2000/svg" @click="isMobileMenuOpen = true"
-            class="fill-current text-primary dark:text-white">
-            <g fill-rule="evenodd">
-              <rect width="24" height="3" rx="1.5" />
-              <rect x="8" y="6" width="16" height="3" rx="1.5" />
-              <rect x="4" y="12" width="20" height="3" rx="1.5" />
-            </g>
-          </svg>
+          <button type="button" @click="themeSwitch()" title="Toggle dark mode"
+            :aria-label="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+            class="mr-4 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary">
+            <i class="bx" :class="isDarkMode ? 'bx-sun' : 'bx-moon'"></i>
+          </button>
+
+          <button type="button" @click="isMobileMenuOpen = true" aria-label="Open menu"
+            class="lg:hidden">
+            <svg width="24" height="15" xmlns="http://www.w3.org/2000/svg"
+              class="fill-current text-primary dark:text-white">
+              <g fill-rule="evenodd">
+                <rect width="24" height="3" rx="1.5" />
+                <rect x="8" y="6" width="16" height="3" rx="1.5" />
+                <rect x="4" y="12" width="20" height="3" rx="1.5" />
+              </g>
+            </svg>
+          </button>
         </div>
         <div class="hidden lg:block">
           <ul class="flex items-center">
@@ -69,11 +87,11 @@
                 class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">Home</a>
             </li>
 
-            <li class="group relative mr-6 mb-1">
+            <li class="current group relative mr-6 mb-1">
               <div
                 class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
               </div>
-              <a href="conference.html"
+              <a href="conference.html" aria-current="page"
                 class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">The
                 Conference</a>
             </li>
@@ -103,7 +121,10 @@
       class="pointer-events-none fixed inset-0 z-50 flex bg-black bg-opacity-80 opacity-0 transition-opacity lg:hidden"
       :class="isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : ''">
       <div class="ml-auto w-2/3 bg-green p-4 md:w-1/3">
-        <i class="bx bx-x absolute top-0 right-0 mt-4 mr-4 text-4xl text-white" @click="isMobileMenuOpen = false"></i>
+        <button type="button" @click="isMobileMenuOpen = false" aria-label="Close menu"
+          class="absolute top-0 right-0 mt-4 mr-4 text-4xl text-white">
+          <i class="bx bx-x"></i>
+        </button>
         <ul class="mt-8 flex flex-col">
 
           <li class="">
@@ -111,7 +132,7 @@
           </li>
 
           <li class="">
-            <a href="conference.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">The
+            <a href="conference.html" aria-current="page" class="mb-3 block px-2 font-body text-lg font-medium text-white">The
               Conference</a>
           </li>
 
@@ -132,7 +153,7 @@
       <div class="container mx-auto">
         <div class="py-16 lg:py-20">
           <div>
-            <img src="assets/img/conference.svg" style="width: auto; height: 40px;">
+            <img src="assets/img/conference.svg" alt="" class="page-icon">
           </div>
           <h1
             class="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl flex items-baseline justify-between w-full">
@@ -147,72 +168,104 @@
             <a class="my-link" href="conference.html#photos">Conference Photos</a>-->
           </p>
 
-          <a href="registration.html#register" id="register"
-            class="mt-12 block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl"
-            style="margin-right: 0.25cm;">
-            Register
-          </a>
+          <div class="cta-buttons">
+            <a href="registration.html#register" id="register"
+              class="block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl">
+              Register
+            </a>
+            <a href="registration.html#submit" id="register"
+              class="block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl">
+              Submit a talk
+            </a>
+          </div>
 
-          <a href="registration.html#submit" id="register"
-            class="mt-12 block bg-secondary px-10 py-4 text-center font-body text-xl font-semibold text-white transition-colors hover:bg-green sm:inline-block sm:text-left sm:text-2xl"
-            style="margin-right: 0.25cm;">
-            Submit a talk
-          </a>
-
-          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
             id="venue">
             Venue
-          </h3>
+          </h2>
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              More information about where the conference will take place will be announced here.
+              CT2027 will be held at the Conference & Cultural Center of the University of Patras.
             </p>
-            <div style="display: flex; justify-content: center;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50132.98835693622!2d21.704406260345444!3d38.24907460485826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135e3599a524ed2d%3A0x400bd2ce2b98ca0!2zzqDOrM-Ez4HOsQ!5e0!3m2!1sel!2sgr!4v1783774367053!5m2!1sel!2sgr" width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div style="display: flex; justify-content: center; margin-top: 20pt; margin-bottom: 20pt;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2414.799693915956!2d21.782929321492663!3d38.288591898312696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135e4b9538cdf55f%3A0x13e1cce4767db7d7!2zzqPPhc69zrXOtM-BzrnOsc66z4wgJiDOoM6_zrvOuc-EzrnPg8-EzrnOus-MIM6azq3Ovc-Ez4HOvw!5e0!3m2!1sen!2sgr!4v1795006578040!5m2!1sen!2sgr" title="Map of the conference venue" style="border:0; width: 100%; max-width: 600px; height: 450px;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              Morning sessions will take place at Auditorium I-4 and parallel sessions will be held at rooms I-10, I-11 and I-12.
+            </p>
+
+            <div class="slideshow" x-data="slideshow(2)" @mouseenter="stop()" @mouseleave="play()"
+              @touchstart.passive="touchStart($event)" @touchend="touchEnd($event)"
+              role="region" aria-roledescription="carousel" aria-label="Photos of the conference rooms">
+              <div class="slideshow-frame">
+                <div class="slideshow-track" :style="`transform: translateX(-${current * 100}%)`">
+                  <img src="assets/img/auditorium.jpeg" alt="Auditorium I-4">
+                  <img src="assets/img/room.jpeg" alt="Room for the parallel sessions" loading="lazy">
+                </div>
+                <button type="button" class="slideshow-arrow slideshow-prev" @click="prev()" aria-label="Previous photo">
+                  <i class="bx bx-chevron-left"></i>
+                </button>
+                <button type="button" class="slideshow-arrow slideshow-next" @click="next()" aria-label="Next photo">
+                  <i class="bx bx-chevron-right"></i>
+                </button>
+              </div>
+              <div class="slideshow-dots">
+                <template x-for="i in count" :key="i">
+                  <button type="button" @click="go(i - 1)" :class="{ 'active': current === i - 1 }"
+                    :aria-label="`Show photo ${i}`"></button>
+                </template>
+              </div>
             </div>
           </div>
 
-          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
             id="programme">
             Programme
-          </h3>
+          </h2>
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              Below will be the conference programme. <!--You can also download it directly <a class="my-link" href="#">here<img src="assets/img/download.svg" style="width: auto; height: 20pt;display: inline; vertical-align: bottom;"></a>.-->
+              The conference programme will be announced closer to the conference dates. <!--You can also download it directly <a class="my-link" href="#">here<img src="assets/img/download.svg" style="width: auto; height: 20pt;display: inline; vertical-align: bottom;"></a>.-->
             </p>
             <!--<embed style="padding: 1cm; width: 80vw; height: 80vh; max-width: 800px;" src="files/test.pdf"
               type="application/pdf">-->
           </div>
 
-          <div style="display: flex; justify-content: center;">
+          <!--<div style="display: flex; justify-content: center;">
               <iframe 
                 src="https://docs.google.com/spreadsheets/d/e/2PACX-1vScUEMBeW9vxfYFC2nA4cLm1ZgonJfgVUJEnc71E2fSliW3l6e0LB48I4W5kMPE1cXlMVTst_C9-DIj/pubhtml?gid=0&single=true&widget=true&headers=false&range=A1:F10&chrome=false"
+                title="Conference programme"
                 style="width: 100%; height: 500px;"
               ></iframe>
-          </div>
+          </div>-->
 
-          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
             id="social">
             Social activities
-          </h3>
+          </h2>
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              Social activities will be announced in due time.
+              Social activities will be announced closer to the conference dates.
             </p>
           </div>
 
-          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
             id="participants">
             Participants
-          </h3>
+          </h2>
 
-          <!--<h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              A list of participants will be displayed here.
+            </p>
+          </div>
+
+          <!--<h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
             id="photos">
             Conference Photos
-          </h3>
+          </h2>
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
@@ -223,9 +276,10 @@
       </div>
     </div>
 
-    <div class="container mx-auto">
-      <p style="padding: 10pt; text-align: center;">&copy; CT2027. All Rights Reserved.</p>
-    </div>
+    <footer class="site-footer container mx-auto">
+      <p class="site-footer-title">&copy; International Category Theory Conference CT2027</p>
+      <p>June 21&ndash;26, 2027 &bull; University of Patras, Greece &bull; <a href="mailto:categorytheory2027@gmail.com">categorytheory2027@gmail.com</a></p>
+    </footer>
   </div>
 
 

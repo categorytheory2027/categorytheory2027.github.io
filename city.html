@@ -9,10 +9,19 @@
 
   <meta name="description" content="CT2027 - Information about Patras" />
 
-  <link rel="canonical" href="https://ct2027.github.io/city.html" />
+  <link rel="canonical" href="https://categorytheory2027.github.io/city.html" />
   <link rel="icon" type="image/png" href="assets/img/logo.png" /> <!--must be 512*512 pixels-->
 
+  <script>
+    // dark mode
+    try {
+      if (sessionStorage.getItem('theme') === 'dark')
+        document.documentElement.classList.add('dark');
+    } catch (e) {}
+  </script>
+
   <link crossorigin="anonymous" href="assets/styles/main.min.css" media="screen" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles/custom.css" />
   <link rel="stylesheet" href="assets/styles/atom-one-dark.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" />
 
@@ -44,19 +53,28 @@
         <a href="/" class="flex items-center">
           <!--<img src="assets/img/logo.png" style="width: auto; height: 30px; object-fit: contain;" />-->
           <p class="hidden font-body text-2xl font-bold text-primary dark:text-white lg:block">
-            <span style="margin-left: 5pt;">CT</span><span style="color: #00aaa1;">2027</span>
+            <span class="logo-ct">CT</span><span class="accent">2027</span>
           </p>
         </a>
-        <div class="flex items-center lg:hidden">
+        <div class="theme-slot flex items-center">
 
-          <svg width="24" height="15" xmlns="http://www.w3.org/2000/svg" @click="isMobileMenuOpen = true"
-            class="fill-current text-primary dark:text-white">
-            <g fill-rule="evenodd">
-              <rect width="24" height="3" rx="1.5" />
-              <rect x="8" y="6" width="16" height="3" rx="1.5" />
-              <rect x="4" y="12" width="20" height="3" rx="1.5" />
-            </g>
-          </svg>
+          <button type="button" @click="themeSwitch()" title="Toggle dark mode"
+            :aria-label="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+            class="mr-4 text-2xl text-primary transition-colors hover:text-secondary dark:text-white dark:hover:text-secondary">
+            <i class="bx" :class="isDarkMode ? 'bx-sun' : 'bx-moon'"></i>
+          </button>
+
+          <button type="button" @click="isMobileMenuOpen = true" aria-label="Open menu"
+            class="lg:hidden">
+            <svg width="24" height="15" xmlns="http://www.w3.org/2000/svg"
+              class="fill-current text-primary dark:text-white">
+              <g fill-rule="evenodd">
+                <rect width="24" height="3" rx="1.5" />
+                <rect x="8" y="6" width="16" height="3" rx="1.5" />
+                <rect x="4" y="12" width="20" height="3" rx="1.5" />
+              </g>
+            </svg>
+          </button>
         </div>
         <div class="hidden lg:block">
           <ul class="flex items-center">
@@ -78,11 +96,11 @@
                 Conference</a>
             </li>
 
-            <li class="group relative mr-6 mb-1">
+            <li class="current group relative mr-6 mb-1">
               <div
                 class="absolute left-0 bottom-0 z-20 h-0 w-full opacity-75 transition-all group-hover:h-2 group-hover:bg-yellow">
               </div>
-              <a href="city.html"
+              <a href="city.html" aria-current="page"
                 class="relative z-30 block px-2 font-body text-lg font-medium text-primary transition-colors group-hover:text-green dark:text-white dark:group-hover:text-secondary">The
                 City</a>
             </li>
@@ -103,7 +121,10 @@
       class="pointer-events-none fixed inset-0 z-50 flex bg-black bg-opacity-80 opacity-0 transition-opacity lg:hidden"
       :class="isMobileMenuOpen ? 'opacity-100 pointer-events-auto' : ''">
       <div class="ml-auto w-2/3 bg-green p-4 md:w-1/3">
-        <i class="bx bx-x absolute top-0 right-0 mt-4 mr-4 text-4xl text-white" @click="isMobileMenuOpen = false"></i>
+        <button type="button" @click="isMobileMenuOpen = false" aria-label="Close menu"
+          class="absolute top-0 right-0 mt-4 mr-4 text-4xl text-white">
+          <i class="bx bx-x"></i>
+        </button>
         <ul class="mt-8 flex flex-col">
 
           <li class="">
@@ -116,7 +137,7 @@
           </li>
 
           <li class="">
-            <a href="city.html" class="mb-3 block px-2 font-body text-lg font-medium text-white">The City</a>
+            <a href="city.html" aria-current="page" class="mb-3 block px-2 font-body text-lg font-medium text-white">The City</a>
           </li>
 
           <li class="">
@@ -132,7 +153,7 @@
       <div class="container mx-auto">
         <div class="py-16 lg:py-20">
           <div>
-            <img src="assets/img/city.svg" style="width: auto; height: 40px;">
+            <img src="assets/img/city.svg" alt="" class="page-icon">
           </div>
           <h1
             class="pt-5 font-body text-4xl font-semibold text-primary dark:text-white md:text-5xl lg:text-6xl flex items-baseline justify-between w-full">
@@ -147,10 +168,10 @@
             <a class="my-link" href="city.html#todo">Things to do</a>
           </p>
 
-          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
             id="the-city">
             The city of Patras
-          </h3>
+          </h2>
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
@@ -160,9 +181,37 @@
               overlooking the Gulf of Patras.
             </p>
 
-            <div style="display: flex; justify-content: center; gap: 20px; padding: 20pt;">
-              <img src="assets/img/patras2.jpg" style="height: 350px;">
-              <img src="assets/img/patras3.jpg" style="height: 350px;">
+            <!-- slideshow: number = how many photos -->
+            <div class="slideshow" x-data="slideshow(11)" @mouseenter="stop()" @mouseleave="play()"
+              @touchstart.passive="touchStart($event)" @touchend="touchEnd($event)"
+              role="region" aria-roledescription="carousel" aria-label="Photos of Patras">
+              <div class="slideshow-frame">
+                <div class="slideshow-track" :style="`transform: translateX(-${current * 100}%)`">
+                  <img src="assets/img/patras-photos/01.jpg" alt="Patras">
+                  <img src="assets/img/patras-photos/02.jpg" alt="Patras" loading="lazy">
+                  <img src="assets/img/patras-photos/03.jpg" alt="Patras" loading="lazy">
+                  <img src="assets/img/patras-photos/04.jpg" alt="Patras" loading="lazy">
+                  <img src="assets/img/patras-photos/05.jpg" alt="Patras" loading="lazy">
+                  <img src="assets/img/patras-photos/06.jpg" alt="Patras" loading="lazy">
+                  <img src="assets/img/patras-photos/07.jpg" alt="Patras" loading="lazy">
+                  <img src="assets/img/patras-photos/08.jpg" alt="Patras" loading="lazy">
+                  <img src="assets/img/patras-photos/09.jpg" alt="Patras" loading="lazy">
+                  <img src="assets/img/patras-photos/10.jpg" alt="Patras" loading="lazy">
+                  <img src="assets/img/patras-photos/11.jpg" alt="Patras" loading="lazy">
+                </div>
+                <button type="button" class="slideshow-arrow slideshow-prev" @click="prev()" aria-label="Previous photo">
+                  <i class="bx bx-chevron-left"></i>
+                </button>
+                <button type="button" class="slideshow-arrow slideshow-next" @click="next()" aria-label="Next photo">
+                  <i class="bx bx-chevron-right"></i>
+                </button>
+              </div>
+              <div class="slideshow-dots">
+                <template x-for="i in count" :key="i">
+                  <button type="button" @click="go(i - 1)" :class="{ 'active': current === i - 1 }"
+                    :aria-label="`Show photo ${i}`"></button>
+                </template>
+              </div>
             </div>
 
             <p class="font-body text-xl font-light text-primary dark:text-white" style="margin-top: .5cm;">
@@ -171,27 +220,41 @@
               by thousands of visitors.
             </p>
             <p class="font-body text-xl font-light text-primary dark:text-white" style="margin-top: .5cm;">
-              If you care to find out more about our city you can have a look at the official <a class="my-link"
+              If you care to find out more about our city you can have a look at the official <a class="my-link" target="_blank" rel="noopener"
                 href="https://www.visitgreece.gr/mainland/peloponnese/patras/">"visit Greece" page
                 for Patras</a>.
             </p>
           </div>
 
-          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
             id="travel">
             Travel to & from Patras
+          </h2>
+
+          <h3 class="subsection-title ml-2 font-body text-xl font-semibold text-primary dark:text-white">
+            By bus
           </h3>
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              Information on how to get to Patras will be added here.
+              You can reach Patras by bus from Athens. From Athens' Eleftherios Venizelos International airport you can either take the bus X93 or a taxi to Kifissos Intercity Bus Station (KTEL Kifissou) and from there the bus to Patras.
             </p>
           </div>
 
-          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+          <h3 class="subsection-title ml-2 font-body text-xl font-semibold text-primary dark:text-white">
+            By ferry
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <p class="font-body text-xl font-light text-primary dark:text-white">
+              Patras can also be reached by ferry from Italy, from the ports of Bari, Brindisi, Ankona and Venice.
+            </p>
+          </div>
+
+          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
             id="accommodation">
             Accommodation options
-          </h3>
+          </h2>
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
@@ -199,36 +262,25 @@
             </p>
           </div>
 
-          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
+          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
             id="getting-around">
             Getting around in Patras
-          </h3>
+          </h2>
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              Information on buses, taxis etc.
+              Taxis have a minimum fare of 4&euro;. For online bookings there is Freenow by Lyft but not Uber. Bus tickets can be purchased at the city center (reg. price 1,20&euro;) or directly from the bus driver for a slightly higher price (reg. price 2&euro;).
             </p>
           </div>
-
-          <h3 class="ml-2 font-body text-2xl font-semibold text-primary dark:text-white" style="margin-top: 1cm;"
-            id="todo">
-            Things to do in Patras
-          </h3>
-
-          <div class="pr-2 pt-3 sm:pt-0">
-            <p class="font-body text-xl font-light text-primary dark:text-white">
-              If you have time to spare and want to explore our city, we will recommend a few things.
-            </p>
-          </div>
-
 
         </div>
       </div>
     </div>
 
-    <div class="container mx-auto">
-      <p style="padding: 10pt; text-align: center;">&copy; CT2027. All Rights Reserved.</p>
-    </div>
+    <footer class="site-footer container mx-auto">
+      <p class="site-footer-title">&copy; International Category Theory Conference CT2027</p>
+      <p>June 21&ndash;26, 2027 &bull; University of Patras, Greece &bull; <a href="mailto:categorytheory2027@gmail.com">categorytheory2027@gmail.com</a></p>
+    </footer>
 
   </div>
 
