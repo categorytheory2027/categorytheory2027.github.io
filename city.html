@@ -31,7 +31,7 @@
     try {
       if (sessionStorage.getItem('theme') === 'dark')
         document.documentElement.classList.add('dark');
-    } catch (e) {}
+    } catch (e) { }
   </script>
 
   <link crossorigin="anonymous" href="assets/styles/main.min.css" media="screen" rel="stylesheet" />
@@ -44,14 +44,13 @@
   <script src="assets/js/highlight.min.js"></script>
   <script src="assets/js/alpine.js" defer></script>
   <script defer src="assets/katex/katex.min.js"></script>
-  <script defer src="assets/katex/contrib/auto-render.min.js" 
-    onload="renderMathInElement(document.body, {
+  <script defer src="assets/katex/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {
       delimiters: [
           {left: '$$', right: '$$', display: true},
           {left: '$', right: '$', display: false}
       ]
     });">
-  </script>
+    </script>
   <script>
     hljs.initHighlightingOnLoad();
   </script>
@@ -79,8 +78,7 @@
             <i class="bx" :class="isDarkMode ? 'bx-sun' : 'bx-moon'"></i>
           </button>
 
-          <button type="button" @click="isMobileMenuOpen = true" aria-label="Open menu"
-            class="lg:hidden">
+          <button type="button" @click="isMobileMenuOpen = true" aria-label="Open menu" class="lg:hidden">
             <svg width="24" height="15" xmlns="http://www.w3.org/2000/svg"
               class="fill-current text-primary dark:text-white">
               <g fill-rule="evenodd">
@@ -152,7 +150,8 @@
           </li>
 
           <li class="">
-            <a href="city.html" aria-current="page" class="mb-3 block px-2 font-body text-lg font-medium text-white">The City</a>
+            <a href="city.html" aria-current="page" class="mb-3 block px-2 font-body text-lg font-medium text-white">The
+              City</a>
           </li>
 
           <li class="">
@@ -183,8 +182,7 @@
             <a class="my-link" href="city.html#todo">Things to do</a>-->
           </p>
 
-          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
-            id="the-city">
+          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white" id="the-city">
             The city of Patras
           </h2>
 
@@ -198,8 +196,8 @@
 
             <!-- slideshow: number = how many photos -->
             <div class="slideshow" x-data="slideshow(11)" @mouseenter="stop()" @mouseleave="play()"
-              @touchstart.passive="touchStart($event)" @touchend="touchEnd($event)"
-              role="region" aria-roledescription="carousel" aria-label="Photos of Patras">
+              @touchstart.passive="touchStart($event)" @touchend="touchEnd($event)" role="region"
+              aria-roledescription="carousel" aria-label="Photos of Patras">
               <div class="slideshow-frame">
                 <div class="slideshow-track" :style="`transform: translateX(-${current * 100}%)`">
                   <img src="assets/img/patras-photos/01.jpg" alt="Patras">
@@ -214,7 +212,8 @@
                   <img src="assets/img/patras-photos/10.jpg" alt="Patras" loading="lazy">
                   <img src="assets/img/patras-photos/11.jpg" alt="Patras" loading="lazy">
                 </div>
-                <button type="button" class="slideshow-arrow slideshow-prev" @click="prev()" aria-label="Previous photo">
+                <button type="button" class="slideshow-arrow slideshow-prev" @click="prev()"
+                  aria-label="Previous photo">
                   <i class="bx bx-chevron-left"></i>
                 </button>
                 <button type="button" class="slideshow-arrow slideshow-next" @click="next()" aria-label="Next photo">
@@ -235,14 +234,14 @@
               by thousands of visitors.
             </p>
             <p class="font-body text-xl font-light text-primary dark:text-white" style="margin-top: .5cm;">
-              If you care to find out more about our city you can have a look at the official <a class="my-link" target="_blank" rel="noopener"
-                href="https://www.visitgreece.gr/mainland/peloponnese/patras/">"visit Greece" page
+              If you care to find out more about our city you can have a look at the official <a class="my-link"
+                target="_blank" rel="noopener" href="https://www.visitgreece.gr/mainland/peloponnese/patras/">"visit
+                Greece" page
                 for Patras</a>.
             </p>
           </div>
 
-          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
-            id="travel">
+          <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white" id="travel">
             Travel to & from Patras
           </h2>
 
@@ -252,10 +251,14 @@
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              You can reach Patras by train from Athens' Eleftherios Venizelos International Airport. Note that you will have to change trains and the last part of the route is done by bus but the whole route, including the last bus, can be booked under a single ticket and is operated by Hellenic Train (TrainOSE), the greek railway organization. 
+              You can reach Patras by train from Athens' Eleftherios Venizelos International Airport. Note that you will
+              have to change trains and the last part of the route is done by bus but the whole route, including the
+              last bus, can be booked under a single ticket and is operated by Hellenic Train (TrainOSE), the greek
+              railway organization.
             </p>
 
-            <p style="margin-top: 10pt;" class="font-body text-xl font-light text-primary dark:text-white">Tickets can be booked either online in Hellenic Train's website or at the airport's train station.</p>
+            <p style="margin-top: 10pt;" class="font-body text-xl font-light text-primary dark:text-white">Tickets can
+              be booked either online in Hellenic Train's website or at the airport's train station.</p>
           </div>
 
           <h3 class="subsection-title ml-2 font-body text-xl font-semibold text-primary dark:text-white">
@@ -264,12 +267,19 @@
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              You can also reach Patras from Athens by bus. From Athens' Eleftherios Venizelos International Airport you could either take the bus X93 or a taxi to <a class="my-link" href="https://maps.app.goo.gl/HHGTkd6DmYpVgYch7">KTEL Achaias</a> at the Kifissos Intercity Bus Station and from there the bus to Patras.  Note that the route from the airport to the intercity bus station can take up to 2 hours depending on the traffic.
+              You can also reach Patras from Athens by bus. From Athens' Eleftherios Venizelos International Airport you
+              could either take the bus X93 or a taxi to <a class="my-link"
+                href="https://maps.app.goo.gl/HHGTkd6DmYpVgYch7">KTEL Achaias</a> at the Kifissos Intercity Bus Station
+              and from there the bus to Patras. Note that the route from the airport to the intercity bus station can
+              take up to 2 hours depending on the traffic.
             </p>
 
-            <p style="margin-top: 10pt;" class="font-body text-xl font-light text-primary dark:text-white">Tickets for the X93 bus can be purchased at the airport or, once inside the bus, you can simply tap your credit/debit card at the blue ticket reader.</p>
+            <p style="margin-top: 10pt;" class="font-body text-xl font-light text-primary dark:text-white">Tickets for
+              the X93 bus can be purchased at the airport or, once inside the bus, you can simply tap your credit/debit
+              card at the blue ticket reader.</p>
 
-            <p style="margin-top: 10pt;" class="font-body text-xl font-light text-primary dark:text-white">Tickets for the bus to Patras can be booked either online at KTEL Achaias' page or directly at the bus station.</p>
+            <p style="margin-top: 10pt;" class="font-body text-xl font-light text-primary dark:text-white">Tickets for
+              the bus to Patras can be booked either online at KTEL Achaias' page or directly at the bus station.</p>
           </div>
 
           <h3 class="subsection-title ml-2 font-body text-xl font-semibold text-primary dark:text-white">
@@ -289,8 +299,44 @@
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              Accommodation suggestions will be announced closer to the conference dates.
+              Here are some suggestions for hotels. In all cases, please use the code <strong>CT2027</strong>. The
+              information below is <i>subject to room availability</i>.
             </p>
+          </div>
+
+          <h3 class="subsection-title ml-2 font-body text-xl font-semibold text-primary dark:text-white">
+            Options in Rio (closer to the conference venue)
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <ul class="hotel-list font-body text-xl font-light text-primary dark:text-white">
+              <li><a class="my-link" target="_blank" rel="noopener" href="https://www.castellohotel.gr/start">Castello
+                  Hotel</a>: starting at 90&euro; per night with breakfast.</li>
+              <li><a class="my-link" target="_blank" rel="noopener"
+                  href="https://vassilicoshospitality-achaiabeachhotel.reserve-online.net/?checkin=2027-06-20&amp;rooms=1&amp;adults=1&amp;children=0&amp;infants=0&amp;nights=6&amp;bkcode=CT2027">Achaia
+                  Beach Hotel</a> (the link offers the CT2027 prices directly); bus connection to the venue.</li>
+            </ul>
+          </div>
+
+          <h3 class="subsection-title ml-2 font-body text-xl font-semibold text-primary dark:text-white">
+            Options in Patras (bus or train transportation to the conference venue)
+          </h3>
+
+          <div class="pr-2 pt-3 sm:pt-0">
+            <ul class="hotel-list font-body text-xl font-light text-primary dark:text-white">
+              <li><a class="my-link" target="_blank" rel="noopener" href="https://www.galaxyhotel.com.gr/en/">Galaxy
+                  City Center Hotel</a>: starting at 60&euro; per night with breakfast.</li>
+              <li><a class="my-link" target="_blank" rel="noopener"
+                  href="https://vassilicoshospitality-patrassmarthotel.reserve-online.net/?checkin=2027-06-20&amp;rooms=1&amp;adults=1&amp;children=0&amp;infants=0&amp;nights=6&amp;bkcode=CT2027">Patras
+                  Smart Hotel</a> (the link offers the CT2027 prices directly).</li>
+              <li><a class="my-link" target="_blank" rel="noopener" href="https://cityloft.gr/">CityLoft Patras
+                  Boutique Hotel</a>: starting at 70&euro; per night without breakfast; option to share a room.</li>
+              <li><a class="my-link" target="_blank" rel="noopener"
+                  href="https://www.marriott.com/en-us/hotels/gpaox-moxy-patra-marina/overview/">Moxy Patra
+                  Marina</a>: 10% discount on the website's prices using the code.</li>
+              <li><a class="my-link" target="_blank" rel="noopener" href="https://www.mywayhotel.gr/home">My Way Hotel
+                  &amp; Events</a>: starting at 92&euro; per night with breakfast; available only up to June 25.</li>
+            </ul>
           </div>
 
           <h2 class="section-title ml-2 font-body text-2xl font-semibold text-primary dark:text-white"
@@ -300,7 +346,9 @@
 
           <div class="pr-2 pt-3 sm:pt-0">
             <p class="font-body text-xl font-light text-primary dark:text-white">
-              Taxis have a minimum fare of 4&euro;. For online bookings there is Freenow by Lyft but not Uber. Bus tickets can be purchased at the city center (reg. price 1,20&euro;) or directly from the bus driver for a slightly higher price (reg. price 2&euro;).
+              Taxis have a minimum fare of 4&euro;. For online bookings there is Freenow by Lyft but not Uber. Bus
+              tickets can be purchased at the city center (reg. price 1,20&euro;) or directly from the bus driver for a
+              slightly higher price (reg. price 2&euro;).
             </p>
           </div>
 
@@ -310,7 +358,8 @@
 
     <footer class="site-footer container mx-auto">
       <p class="site-footer-title">&copy; International Category Theory Conference CT2027</p>
-      <p>June 21&ndash;26, 2027 &bull; University of Patras, Greece &bull; <a href="mailto:categorytheory2027@gmail.com">categorytheory2027@gmail.com</a></p>
+      <p>June 21&ndash;26, 2027 &bull; University of Patras, Greece &bull; <a
+          href="mailto:categorytheory2027@gmail.com">categorytheory2027@gmail.com</a></p>
     </footer>
 
   </div>
